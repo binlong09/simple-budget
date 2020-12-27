@@ -1,0 +1,15 @@
+name: test-api-pr
+on:
+  pull_request:
+    paths-ignore:
+      - 'client/**'
+      #- '.github/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: docker:19.03.5
+    services:
+      image: docker:19.03.5-dind
+    steps:
+      - run: echo "This job runs on Pull Request creation"
