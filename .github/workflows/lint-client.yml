@@ -1,0 +1,11 @@
+name: Linting Client
+on:
+  pull_request:
+    paths:
+      - 'client/**' # Do not run this action when nothing in client is changed
+
+jobs:
+  lint-client:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job runs on Pull Request creation with terraform code changes"

@@ -9,7 +9,7 @@ on:
       - '.github/**'
 
 jobs:
-  test:
+  build-and-push:
     runs-on: ubuntu-latest
     container: docker:19.03.5
     services:

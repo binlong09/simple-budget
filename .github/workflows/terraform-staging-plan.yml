@@ -1,11 +1,11 @@
-name: Validate Terraform Template
+name: Terraform Staging Plan
 on:
   pull_request:
     paths:
       - 'deploy/**' # Do not run this action when nothing in deploy is changed
 
 jobs:
-  validate-terraform:
+  terraform-staging-plan:
     runs-on: ubuntu-latest
     container: hashicorp/terraform:0.14.3
     steps:
