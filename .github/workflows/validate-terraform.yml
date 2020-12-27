@@ -2,7 +2,7 @@ name: Validate Terraform Template
 on:
   pull_request:
     paths:
-      - 'deploy/**'
+      - '!deploy/**'
 
 jobs:
   test:
