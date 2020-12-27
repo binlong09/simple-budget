@@ -7,10 +7,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      name: hashicorp/terraform:0.12.21
-      entrypoint: # this step is needed because of a limitation of the above terraform image
-      - '/usr/bin/env'
-      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    container: hashicorp/terraform:0.14.3
     steps:
       - run: echo "This job runs on Pull Request creation with terraform code changes"
