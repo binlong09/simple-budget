@@ -1,8 +1,8 @@
 name: Linting Client
 on:
   pull_request:
-    paths-ignore:
-      - '!client/**' # Do not run this action when nothing in client is changed
+    paths:
+      - 'client/**' # Do not run this action when nothing in client is changed
 
 jobs:
   lint-client:

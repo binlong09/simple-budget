@@ -1,8 +1,8 @@
 name: Validate Terraform Template
 on:
   pull_request:
-    paths-ignore:
-      - '!deploy/**' # Do not run this action when nothing in deploy is changed
+    paths:
+      - 'deploy/**' # Do not run this action when nothing in deploy is changed
 
 jobs:
   validate-terraform:
