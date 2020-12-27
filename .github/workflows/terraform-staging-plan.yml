@@ -1,7 +1,7 @@
 name: Terraform Staging Plan
 on:
   pull_request:
-    paths:
+    paths-ignore:
       - '!deploy/**' # Do not run this action when nothing in deploy is changed
 
 jobs:
