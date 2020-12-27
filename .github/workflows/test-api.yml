@@ -1,4 +1,4 @@
-name: test-api-pr
+name: Test API on Pull Requests
 on:
   pull_request:
     paths-ignore:

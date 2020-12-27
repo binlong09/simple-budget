@@ -1,4 +1,4 @@
-name: test-api-pr
+name: Validate Terraform Template
 on:
   pull_request:
     paths:
