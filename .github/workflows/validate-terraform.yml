@@ -1,0 +1,12 @@
+name: Validate Terraform Template
+on:
+  pull_request:
+    paths:
+      - '!deploy/**' # Do not run this action when nothing in deploy is changed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: hashicorp/terraform:0.14.3
+    steps:
+      - run: echo "This job runs on Pull Request creation with terraform code changes"
