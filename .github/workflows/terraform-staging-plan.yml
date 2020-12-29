@@ -25,5 +25,5 @@ jobs:
           cd deploy/
           export TF_VAR_ecr_image_api=$ECR_REPO:$IMAGE_TAG
           terraform init
-          terraform workspace select staging || terraform new staging
+          terraform workspace select staging || terraform new workspace staging
           terraform plan

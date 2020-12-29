@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "simple-budget-tf-state"
-    key            = "sample-rails.tfstate"
+    key            = "simple-budget.tfstate"
     region         = "ap-southeast-1"
     encrypt        = true
     dynamodb_table = "simple-budget-tf-state-lock"
