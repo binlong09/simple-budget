@@ -1,11 +1,10 @@
 name: Terraform production plan
 on:
-  push:
+  pull_request:
     branches:
       - production
-    paths-ignore:
-      - 'client/**'
-      - '.github/**'
+    paths:
+      - 'deploy/**' # Do not run this action when nothing in deploy is changed
 
 jobs:
   terraform-production-plan:
