@@ -20,10 +20,10 @@ jobs:
           ECR_REPO: ${{ secrets.ECR_REPO }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          - apk add python3
-          - pip3 install awscli
-          - docker build --compress -t $ECR_REPO:$IMAGE_TAG .
-          - $(aws ecr get-login --no-include-email --region ap-southeast-1)
-          - docker push $ECR_REPO:$IMAGE_TAG
-          - docker tag $ECR_REPO:$IMAGE_TAG $ECR_REPO:latest
-          - docker push $ECR_REPO:latest
+          apk add python3
+          pip3 install awscli
+          docker build --compress -t $ECR_REPO:$IMAGE_TAG .
+          $(aws ecr get-login --no-include-email --region ap-southeast-1)
+          docker push $ECR_REPO:$IMAGE_TAG
+          docker tag $ECR_REPO:$IMAGE_TAG $ECR_REPO:latest
+          docker push $ECR_REPO:latest
