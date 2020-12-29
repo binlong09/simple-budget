@@ -12,6 +12,7 @@ jobs:
       image: docker:19.03.5-dind
     steps:
       - uses: actions/checkout@v2
+      - run: ls -la
       - run: apk add --no-cache docker-compose
       - run: docker-compose -f docker-compose.test.yml run api rails db:create
       - run: docker-compose -f docker-compose.test.yml run --rm api bundle exec rspec
