@@ -1,0 +1,16 @@
+name: Terraform Staging Apply
+on:
+  push:
+    branches:
+      - master
+      - production
+    paths-ignore:
+      - 'client/**'
+      - '.github/**'
+
+jobs:
+  terraform-staging-apply:
+    runs-on: ubuntu-latest
+    container: hashicorp/terraform:0.14.3
+    steps:
+      - run: echo "This job runs on code merged on master and production"
