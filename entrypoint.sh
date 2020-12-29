@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo "debug123"
+
 rails db:create
 rails db:migrate
 
