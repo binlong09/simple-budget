@@ -7,7 +7,7 @@ variable "project" {
 }
 
 variable "contact" {
-  default = "email@gmail.com"
+  default = "binlong09@@gmail.com"
 }
 
 variable "db_username" {
