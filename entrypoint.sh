@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e
 
-echo "debug123"
-
-rails db:create
-rails db:migrate
-
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f /myapp/tmp/pids/server.pid
 
