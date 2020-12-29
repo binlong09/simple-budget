@@ -1,3 +1,4 @@
+# Gotcha:: API's volumes need to be removed for github actions to work
 version: "3"
 services:
   db:
