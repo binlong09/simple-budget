@@ -15,4 +15,11 @@ jobs:
     services:
       image: docker:19.03.5-dind
     steps:
-      - run: echo "This job runs on commits being merged on master or production"
+      - uses: actions/checkout@v2
+      - run: apk add python3
+      - run: pip3 install awscli
+      - run: docker build --compress -t $ECR_REPO:$CI_COMMIT_SHORT_SHA .
+      - run: $(aws ecr get-login --no-include-email --region ap-southeast-1)
+      - run: docker push $ECR_REPO:$CI_COMMIT_SHORT_SHA
+      - run: docker tag $ECR_REPO:$CI_COMMIT_SHORT_SHA $ECR_REPO:latest
+      - run: docker push $ECR_REPO:latest
