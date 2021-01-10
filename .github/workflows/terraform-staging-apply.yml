@@ -25,9 +25,15 @@ jobs:
         env:
           ECR_REPO: ${{ secrets.ECR_REPO }}
           IMAGE_TAG: ${{ github.sha }}
+          DB_USERNAME: ${{ secrets.staging.TF_VAR_db_username }}
+          DB_PASSWORD: ${{ secrets.staging.TF_VAR_db_password }}
+          RAILS_MASTER_KEY: ${{ secrets.staging.TF_VAR_rails_master_key }}
         run: |
           cd deploy/
           export TF_VAR_ecr_image_api=$ECR_REPO:$IMAGE_TAG
+          export TF_VAR_db_username=$DB_USERNAME
+          export TF_VAR_db_password=$DB_PASSWORD
+          export TF_VAR_rails_master_key=$RAILS_MASTER_KEY
           terraform init
           terraform workspace select staging
           terraform apply -auto-approve
