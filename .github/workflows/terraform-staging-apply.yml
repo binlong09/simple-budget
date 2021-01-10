@@ -9,7 +9,7 @@ on:
       - '.github/**'
 
 jobs:
-  terraform-staging-plan:
+  terraform-staging-apply:
     runs-on: ubuntu-latest
     container: hashicorp/terraform:0.14.3
     steps:
@@ -21,7 +21,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-1
 
-      - name: Terraform Staging Plan
+      - name: Terraform Staging Apply
         env:
           ECR_REPO: ${{ secrets.ECR_REPO }}
           IMAGE_TAG: ${{ github.sha }}
