@@ -34,6 +34,8 @@ jobs:
           export TF_VAR_db_username=$DB_USERNAME
           export TF_VAR_db_password=$DB_PASSWORD
           export TF_VAR_rails_master_key=$RAILS_MASTER_KEY
+          echo $TF_VAR_rails_master_key
+          echo $TF_VAR_db_password
           terraform init
           terraform workspace select staging
           terraform apply -auto-approve
