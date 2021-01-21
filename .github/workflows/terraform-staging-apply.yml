@@ -37,5 +37,5 @@ jobs:
           terraform workspace select staging
           terraform apply -auto-approve
           echo $(terraform output bastion_host)
-        - name: Echo test
-          run: echo ${{ steps.test_output }}
+      - name: Echo test
+        run: echo ${{ steps.test_output }}
