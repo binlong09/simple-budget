@@ -38,4 +38,4 @@ jobs:
           terraform apply -auto-approve
           echo $(terraform output bastion_host)
       - name: Echo test
-        run: echo ${{ steps.test_output }}
+        run: echo ${{ steps.test_output.outputs }}
