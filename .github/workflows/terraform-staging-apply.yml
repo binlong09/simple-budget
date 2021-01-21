@@ -36,6 +36,6 @@ jobs:
           terraform init
           terraform workspace select staging
           terraform apply -auto-approve
-          echo $(terraform output bastion_host)
+          echo "##[set-output name=bastion_host_dns;]$(terraform output bastion_host)"
       - name: Echo test
-        run: echo ${{ steps.test_output.outputs }}
+        run: echo ${{ steps.test_output.outputs.bastion_host_dns }}
